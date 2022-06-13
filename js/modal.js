@@ -5,6 +5,7 @@
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
     modal: document.querySelector('[data-modal]'),
+    modalInner: document.querySelector('.modal'),
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
@@ -16,10 +17,12 @@
     refs.body.style.paddingRight = scrollBarWidth;
     refs.body.style.overflow = 'hidden';
     refs.header.style.right = scrollBarWidth;
+    refs.modalInner.style.right = scrollBarWidth;
     if (refs.modal.classList.contains('is-hidden')) {
       refs.body.style.paddingRight = 0;
       refs.body.style.overflow = 'auto';
       refs.header.style.right = 0;
+      refs.modalInner.style.right = 0;
     }
   }
 

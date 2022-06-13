@@ -818,6 +818,7 @@ body {
 .footer-wrap {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 .footer-item:not(:last-child) {
   margin-right: 70px;

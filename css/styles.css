@@ -221,6 +221,7 @@ body {
   border: 2px solid var(--text-color-dark);
   border-radius: 3px;
 
+  margin-right: 3px;
   vertical-align: text-top;
 
   transition-property: fill, box-shadow, background-color, border-color, opacity;
@@ -954,7 +955,7 @@ body {
   border: 1px solid var(--modal-close-border-color);
   border-radius: 50%;
 
-  transition-property: fill;
+  transition-property: fill, transform;
   transition-duration: var(--transition-base-time);
   transition-timing-function: var(--transition-base-animation);
 
@@ -962,6 +963,9 @@ body {
 }
 .modal-close:hover {
   fill: var(--accent-color);
+}
+.modal-close:focus {
+  transform: rotate(90deg);
 }
 .modal-title {
   margin-top: 0;

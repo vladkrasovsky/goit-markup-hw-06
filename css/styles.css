@@ -25,6 +25,8 @@
   --overlay-color: rgba(0, 0, 0, 0.2);
   --modal-bg: #ffffff;
   --modal-close-border-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: rgba(33, 33, 33, 0.2);
+  --input-border-color-light: rgba(255, 255, 255, 0.3);
 
   /* sizes */
   --container-width: 1200px;
@@ -91,8 +93,64 @@ body {
   margin-top: var(--card-set-gap);
 }
 
+/* forms */
+.form-field {
+  position: relative;
+}
+.input {
+  max-width: 100%;
+  padding: 14px;
+
+  letter-spacing: var(--letter-spacing-default);
+
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+}
+/* input states */
+.input:hover,
+.input:focus {
+  border-color: var(--accent-color);
+}
+/* input variants */
+.input-light {
+  color: var(--text-color-light);
+  background-color: transparent;
+  border-color: var(--input-border-color-light);
+}
+.input-large {
+  height: 50px;
+  padding: 15px;
+}
+
+.form-label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  letter-spacing: var(--letter-spacing-default);
+
+  transition-property: opacity;
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+
+  user-select: none;
+  pointer-events: none;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  opacity: 0;
+}
+
+/* buttons */
 .button {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   min-width: 200px;
   padding: 10px 32px;
 
@@ -103,6 +161,7 @@ body {
   text-align: center;
   letter-spacing: var(--letter-spacing-lg);
   color: var(--text-color-dark);
+  fill: var(--text-color-dark);
 
   background-color: var(--button-bg);
   border: none;
@@ -114,6 +173,12 @@ body {
 
   cursor: pointer;
   user-select: none;
+}
+.button-icon.right {
+  margin-left: 10px;
+}
+.button-icon.left {
+  margin-right: 10px;
 }
 /* button states */
 .button:hover,
@@ -128,6 +193,7 @@ body {
 .button-accent {
   color: var(--text-color-light);
   background-color: var(--accent-color);
+  fill: var(--text-color-light);
 }
 .button-accent:hover,
 .button-accent:focus {
@@ -662,7 +728,7 @@ body {
   color: var(--accent-color);
 }
 
-.follow-us-title {
+.footer-item-title {
   margin-bottom: 20px;
   margin-top: 0;
 
@@ -674,6 +740,18 @@ body {
   line-height: 1.14;
   letter-spacing: var(--letter-spacing-default);
   text-transform: uppercase;
+}
+
+.subscription-form {
+  display: flex;
+  align-items: center;
+}
+.subscription-input {
+  width: 358px;
+  margin-right: 12px;
+}
+.subscription-label {
+  color: var(--footer-link-color);
 }
 
 /* -----------------------MODALS--------------------- */

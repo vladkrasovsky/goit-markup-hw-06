@@ -164,6 +164,8 @@ body {
 .input-large {
   height: 50px;
   padding: 15px;
+
+  font-size: 16px;
 }
 .input-textarea {
   height: 120px;
@@ -873,6 +875,7 @@ body {
   margin-right: 12px;
 }
 .subscription-label {
+  font-size: 16px;
   color: var(--footer-link-color);
 }
 

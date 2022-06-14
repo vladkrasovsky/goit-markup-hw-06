@@ -820,7 +820,6 @@ body {
 .footer-wrap {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
 }
 .footer-item:not(:last-child) {
   margin-right: 70px;
@@ -863,6 +862,9 @@ body {
   text-transform: uppercase;
 }
 
+.footer-item.subscription {
+  margin-left: auto;
+}
 .subscription-form {
   display: flex;
   align-items: center;
